@@ -5,7 +5,7 @@ canvas.width = 1024;
 canvas.height = 576;
 
 c.fillRect(0, 0, canvas.width, canvas.height);
-const gravity = 0.2;
+const gravity = 0.7;
 
 class Sprite {
   constructor({ position, velocity }) {
@@ -86,14 +86,14 @@ function animate() {
   enemy.velocity.x = 0;
 
   //player movement
-  if (keys.a.pressed && player.lastKey === "a") player.velocity.x = -1;
-  else if (keys.d.pressed && player.lastKey === "d") player.velocity.x = 1;
+  if (keys.a.pressed && player.lastKey === "a") player.velocity.x = -5;
+  else if (keys.d.pressed && player.lastKey === "d") player.velocity.x = 5;
 
   //enemy movement
   if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft")
-    enemy.velocity.x = -1;
+    enemy.velocity.x = -5;
   else if (keys.ArrowRight.pressed && enemy.lastKey === "ArrowRight")
-    enemy.velocity.x = 1;
+    enemy.velocity.x = 5;
 }
 
 animate();
