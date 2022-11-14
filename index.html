@@ -1,6 +1,14 @@
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
 <body>
   <!-- red container div-->
-  <div style="position: relative">
+  <div style="position: relative; display: inline-block">
     <!-- smaller red container div-->
     <div
       style="
@@ -8,10 +16,34 @@
         display: flex;
         width: 100%;
         align-items: center;
+        padding: 20px;
       "
     >
       <!-- player health -->
-      <div style="background-color: yellow; height: 30px; width: 100%"></div>
+      <div
+        style="
+          position: relative;
+          height: 30px;
+          width: 100px;
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+        "
+      >
+        <div style="background-color: yellow; height: 30px; width: 100%"></div>
+        <div
+          id="playerHealth"
+          style="
+            position: absolute;
+            background: blue;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+          "
+        ></div>
+      </div>
+
       <!-- timer -->
       <div
         style="
@@ -21,17 +53,24 @@
           flex-shrink: 0;
         "
       ></div>
+
       <!-- enemy health -->
-      <div
-        style="
-          background-color: yellow;
-          height: 30px;
-          width: 100px;
-          width: 100%;
-        "
-      ></div>
+      <div style="position: relative; height: 30px; width: 100px; width: 100%">
+        <div style="background-color: yellow; height: 30px"></div>
+        <div
+          id="enemyHealth"
+          style="
+            position: absolute;
+            background: blue;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+          "
+        ></div>
+      </div>
     </div>
-    <canvas style="width: 100%"></canvas>
+    <canvas></canvas>
   </div>
   <script src="index.js"></script>
 </body>
