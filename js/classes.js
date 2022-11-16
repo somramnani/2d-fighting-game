@@ -33,9 +33,9 @@ class Sprite {
   }
   update() {
     this.draw();
-    this.framesElasped++;
+    this.framesElapsed++;
 
-    if (this.framesElasped % this.framesHold === 0) {
+    if (this.framesElapsed % this.framesHold === 0) {
       if (this.framesCurrent < this.framesMax - 1) this.framesCurrent++;
       else this.framesCurrent = 0;
     }
@@ -96,6 +96,13 @@ class Fighter extends Sprite {
   // }
   update() {
     this.draw();
+    this.framesElapsed++;
+
+    if (this.framesElapsed % this.framesHold === 0) {
+      if (this.framesCurrent < this.framesMax - 1) this.framesCurrent++;
+      else this.framesCurrent = 0;
+    }
+
     this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
     this.attackBox.position.y = this.position.y;
 
