@@ -50,11 +50,11 @@ class Fighter extends Sprite {
     position,
     velocity,
     color = "red",
-
     imageSrc,
     scale = 1,
     framesMax = 1,
     offset = { x: 0, y: 0 },
+    sprites,
   }) {
     super({
       position,
@@ -83,20 +83,13 @@ class Fighter extends Sprite {
     this.framesCurrent = 0;
     this.framesElapsed = 0;
     this.framesHold = 5;
+    this.sprites = sprites;
+
+    for (const sprite in this.sprites) {
+      sprites[sprite].image = new Image();
+      sprites[sprite].image.src = sprites[sprite].imageSrc;
+    }
   }
-  // draw() {
-  //   c.fillStyle = this.color;
-  //   c.fillRect(this.position.x, this.position.y, this.width, this.height);
-  //   if (this.isAttacking) {
-  //     c.fillStyle = "green";
-  //     c.fillRect(
-  //       this.attackBox.position.x,
-  //       this.attackBox.position.y,
-  //       this.attackBox.width,
-  //       this.attackBox.height
-  //     );
-  //   }
-  // }
   update() {
     this.draw();
     this.animateFrames();

@@ -36,6 +36,16 @@ const player = new Fighter({
     x: 215,
     y: 180,
   },
+  sprites: {
+    idle: {
+      imageSrc: "./assets/images/samuraiJack/Idle.png",
+      framesMax: 8,
+    },
+    run: {
+      imageSrc: "./assets/images/samuraiJack/Run.png",
+      framesMax: 8,
+    },
+  },
 });
 
 const enemy = new Fighter({
@@ -91,8 +101,14 @@ function animate() {
   enemy.velocity.x = 0;
 
   //player movement
-  if (keys.a.pressed && player.lastKey === "a") player.velocity.x = -5;
-  else if (keys.d.pressed && player.lastKey === "d") player.velocity.x = 5;
+  player.image = player.sprites.idle.image;
+  if (keys.a.pressed && player.lastKey === "a") {
+    player.velocity.x = -5;
+    player.image = player.sprites.run.image;
+  } else if (keys.d.pressed && player.lastKey === "d") {
+    player.velocity.x = 5;
+    player.image = player.sprites.run.image;d
+  }
 
   //enemy movement
   if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft")
