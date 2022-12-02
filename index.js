@@ -29,6 +29,35 @@ const player = new Fighter({
     x: 0,
     y: 0,
   },
+  imageSrc: "./assets/images/samuraiJack/Idle.png",
+  framesMax: 8,
+  scale: 2.5,
+  offset: {
+    x: 215,
+    y: 180,
+  },
+  sprites: {
+    idle: {
+      imageSrc: "./assets/images/samuraiJack/Idle.png",
+      framesMax: 8,
+    },
+    run: {
+      imageSrc: "./assets/images/samuraiJack/Run.png",
+      framesMax: 8,
+    },
+    jump: {
+      imageSrc: "./assets/images/samuraiJack/Jump.png",
+      framesMax: 2,
+    },
+    fall: {
+      imageSrc: "./assets/images/samuraiJack/Fall.png",
+      framesMax: 2,
+    },
+    attack1: {
+      imageSrc: "./assets/images/samuraiJack/Attack1.png",
+      framesMax: 6,
+    },
+  },
 });
 
 const enemy = new Fighter({
@@ -83,9 +112,22 @@ function animate() {
   player.velocity.x = 0;
   enemy.velocity.x = 0;
 
-  //player movement
-  if (keys.a.pressed && player.lastKey === "a") player.velocity.x = -5;
-  else if (keys.d.pressed && player.lastKey === "d") player.velocity.x = 5;
+  // player movement
+
+  if (keys.a.pressed && player.lastKey === "a") {
+    player.velocity.x = -5;
+    player.switchSprite("run");
+  } else if (keys.d.pressed && player.lastKey === "d") {
+    player.velocity.x = 5;
+    player.switchSprite("run");
+  } else {
+    player.switchSprite("idle");
+  }
+  if (player.velocity.y < 0) {
+    player.switchSprite("jump");
+  } else if (player.velocity.y > 0) {
+    player.switchSprite("fall");
+  }
 
   //enemy movement
   if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft")
