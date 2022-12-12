@@ -74,6 +74,35 @@ const enemy = new Fighter({
     x: -50,
     y: 0,
   },
+  imageSrc: "./assets/images/kenji/Idle.png",
+  framesMax: 4,
+  scale: 2.5,
+  offset: {
+    x: 215,
+    y: 195,
+  },
+  sprites: {
+    idle: {
+      imageSrc: "./assets/images/kenji/Idle.png",
+      framesMax: 4,
+    },
+    run: {
+      imageSrc: "./assets/images/kenji/Run.png",
+      framesMax: 8,
+    },
+    jump: {
+      imageSrc: "./assets/images/kenji/Jump.png",
+      framesMax: 2,
+    },
+    fall: {
+      imageSrc: "./assets/images/kenji/Fall.png",
+      framesMax: 2,
+    },
+    attack1: {
+      imageSrc: "./assets/images/kenji/Attack1.png",
+      framesMax: 4,
+    },
+  },
 });
 
 console.log(player);
@@ -113,7 +142,6 @@ function animate() {
   enemy.velocity.x = 0;
 
   // player movement
-
   if (keys.a.pressed && player.lastKey === "a") {
     player.velocity.x = -5;
     player.switchSprite("run");
@@ -130,10 +158,20 @@ function animate() {
   }
 
   //enemy movement
-  if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft")
+  if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft") {
     enemy.velocity.x = -5;
-  else if (keys.ArrowRight.pressed && enemy.lastKey === "ArrowRight")
+    enemy.switchSprite("run");
+  } else if (keys.ArrowRight.pressed && enemy.lastKey === "ArrowRight") {
     enemy.velocity.x = 5;
+    enemy.switchSprite("run");
+  } else {
+    enemy.switchSprite("idle");
+  }
+  if (enemy.velocity.y < 0) {
+    enemy.switchSprite("jump");
+  } else if (enemy.velocity.y > 0) {
+    enemy.switchSprite("fall");
+  }
 
   //detect for collision
   if (
@@ -190,7 +228,7 @@ window.addEventListener("keydown", (event) => {
       enemy.velocity.y = -10;
       break;
     case "ArrowDown":
-      enemy.isAttacking = true;
+      enemy.attack();
       break;
   }
 });
