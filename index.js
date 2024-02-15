@@ -62,6 +62,14 @@ const player = new Fighter({
       framesMax: 4,
     },
   },
+  attackBox: {
+    offset: {
+      x: 100,
+      y: 0,
+    },
+    width: 140,
+    height: 50,
+  },
 });
 
 const enemy = new Fighter({
@@ -110,6 +118,14 @@ const enemy = new Fighter({
       imageSrc: "./assets/images/kenji/Take hit.png",
       framesMax: 3,
     },
+  },
+  attackBox: {
+    offset: {
+      x: -170,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 
@@ -192,12 +208,10 @@ function animate() {
     enemy.health -= 20;
     document.querySelector("#enemyHealth").style.width = enemy.health + "%";
   }
-
-  //if player misses
   if (player.isAttacking && player.framesCurrent === 4) {
     player.isAttacking = false;
   }
-  //this is where our player gets hit
+
   if (
     rectangularCollision({ rectangle1: enemy, rectangle2: player }) &&
     enemy.isAttacking &&
@@ -207,8 +221,6 @@ function animate() {
     enemy.isAttacking = false;
     document.querySelector("#playerHealth").style.width = player.health + "%";
   }
-
-  //if player misses
   if (enemy.isAttacking && enemy.framesCurrent === 2) {
     enemy.isAttacking = false;
   }
