@@ -57,6 +57,10 @@ const player = new Fighter({
       imageSrc: "./assets/images/samuraiJack/Attack1.png",
       framesMax: 6,
     },
+    takeHit: {
+      imageSrc: "./assets/images/samuraiJack/Take Hit - white silhouette.png",
+      framesMax: 4,
+    },
   },
 });
 
@@ -101,6 +105,10 @@ const enemy = new Fighter({
     attack1: {
       imageSrc: "./assets/images/kenji/Attack1.png",
       framesMax: 4,
+    },
+    takeHit: {
+      imageSrc: "./assets/images/kenji/Take hit.png",
+      framesMax: 3,
     },
   },
 });
@@ -173,23 +181,38 @@ function animate() {
     enemy.switchSprite("fall");
   }
 
-  //detect for collision
+  //detect for collision & enemy gets hit
   if (
     rectangularCollision({ rectangle1: player, rectangle2: enemy }) &&
-    player.isAttacking
+    player.isAttacking &&
+    player.framesCurrent === 4
   ) {
+    enemy.takeHit();
     player.isAttacking = false;
     enemy.health -= 20;
     document.querySelector("#enemyHealth").style.width = enemy.health + "%";
   }
+
+  //if player misses
+  if (player.isAttacking && player.framesCurrent === 4) {
+    player.isAttacking = false;
+  }
+  //this is where our player gets hit
   if (
     rectangularCollision({ rectangle1: enemy, rectangle2: player }) &&
-    enemy.isAttacking
+    enemy.isAttacking &&
+    enemy.framesCurrent === 2
   ) {
+    player.takeHit();
     enemy.isAttacking = false;
-    player.health -= 20;
     document.querySelector("#playerHealth").style.width = player.health + "%";
   }
+
+  //if player misses
+  if (enemy.isAttacking && enemy.framesCurrent === 2) {
+    enemy.isAttacking = false;
+  }
+
   //end game based on health
   if (enemy.health <= 0 || player.health <= 0) {
     determineWinner({ player, enemy, timerId });
