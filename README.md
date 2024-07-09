@@ -2,4 +2,4 @@
 
 A simple multiplayer fighting game built in vanilla JavaScript
 
-![](assets/images/demo.png")
+![Demo Image](assets/images/demo.png")
