@@ -13,7 +13,7 @@ const background = new Sprite({
     x: 0,
     y: 0,
   },
-  imageSrc: "../public/images/Mustafar.gif",
+  imageSrc: "images/Mustafar.gif",
 });
 
 const player = new Fighter({
