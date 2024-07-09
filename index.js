@@ -29,41 +29,71 @@ const player = new Fighter({
     x: 0,
     y: 0,
   },
-  imageSrc: "./assets/images/samuraiJack/Idle.png",
-  framesMax: 8,
-  scale: 2.5,
-  offset: {
-    x: 215,
-    y: 180,
-  },
+  imageSrc: "./assets/images/Anakin/Idle.png",
+  framesMax: 5,
+  scale: 2,
+  // offset: {
+  //   x: 215,
+  //   y: 180,
+  // },
+  // sprites: {
+  //   idle: {
+  //     imageSrc: "./assets/images/samuraiJack/Idle.png",
+  //     framesMax: 8,
+  //   },
+  //   run: {
+  //     imageSrc: "./assets/images/samuraiJack/Run.png",
+  //     framesMax: 8,
+  //   },
+  //   jump: {
+  //     imageSrc: "./assets/images/samuraiJack/Jump.png",
+  //     framesMax: 2,
+  //   },
+  //   fall: {
+  //     imageSrc: "./assets/images/samuraiJack/Fall.png",
+  //     framesMax: 2,
+  //   },
+  //   attack1: {
+  //     imageSrc: "./assets/images/samuraiJack/Attack1.png",
+  //     framesMax: 6,
+  //   },
+  //   takeHit: {
+  //     imageSrc: "./assets/images/samuraiJack/Take Hit - white silhouette.png",
+  //     framesMax: 4,
+  //   },
+  //   death: {
+  //     imageSrc: "./assets/images/samuraiJack/Death.png",
+  //     framesMax: 6,
+  //   },
+  // },
   sprites: {
     idle: {
-      imageSrc: "./assets/images/samuraiJack/Idle.png",
-      framesMax: 8,
+      imageSrc: "./assets/images/Anakin/Idle.png",
+      framesMax: 5,
     },
     run: {
-      imageSrc: "./assets/images/samuraiJack/Run.png",
-      framesMax: 8,
+      imageSrc: "./assets/images/Anakin/Run.png",
+      framesMax: 13,
     },
     jump: {
-      imageSrc: "./assets/images/samuraiJack/Jump.png",
+      imageSrc: "./assets/images/Anakin/Jump.png",
       framesMax: 2,
     },
     fall: {
-      imageSrc: "./assets/images/samuraiJack/Fall.png",
+      imageSrc: "./assets/images/Anakin/Fall.png",
       framesMax: 2,
     },
     attack1: {
-      imageSrc: "./assets/images/samuraiJack/Attack1.png",
-      framesMax: 6,
+      imageSrc: "./assets/images/Anakin/Attack2.png",
+      framesMax: 8,
     },
     takeHit: {
-      imageSrc: "./assets/images/samuraiJack/Take Hit - white silhouette.png",
+      imageSrc: "./assets/images/Anakin/Take Hit.png",
       framesMax: 4,
     },
     death: {
-      imageSrc: "./assets/images/samuraiJack/Death.png",
-      framesMax: 6,
+      imageSrc: "./assets/images/Anakin/Death.png",
+      framesMax: 10,
     },
   },
   attackBox: {
@@ -95,8 +125,18 @@ const enemy = new Fighter({
   scale: 2.5,
   offset: {
     x: 215,
-    y: 195,
+    y: 200,
   },
+  // sprites: {
+  //   idle: {
+  //     imageSrc: "./assets/images/obi-Wan/Idle.png",
+  //     framesMax: 5,
+  //   },
+  //   run: {
+  //     imageSrc: "./assets/images/obi-Wan/Run.png",
+  //     framesMax: 12,
+  //   },
+  // },
   sprites: {
     idle: {
       imageSrc: "./assets/images/kenji/Idle.png",
