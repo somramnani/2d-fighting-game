@@ -13,7 +13,7 @@ const background = new Sprite({
     x: 0,
     y: 0,
   },
-  imageSrc: "./public/images/Mustafar.gif",
+  imageSrc: "images/Mustafar.gif",
 });
 
 const player = new Fighter({
@@ -29,7 +29,7 @@ const player = new Fighter({
     x: 0,
     y: 0,
   },
-  imageSrc: "./public/images/samuraiJack/Idle.png",
+  imageSrc: "images/samuraiJack/Idle.png",
   framesMax: 8,
   scale: 2.5,
   offset: {
@@ -38,27 +38,27 @@ const player = new Fighter({
   },
   sprites: {
     idle: {
-      imageSrc: "./public/images/samuraiJack/Idle.png",
+      imageSrc: "images/samuraiJack/Idle.png",
       framesMax: 8,
     },
     run: {
-      imageSrc: "./public/images/samuraiJack/Run.png",
+      imageSrc: "images/samuraiJack/Run.png",
       framesMax: 8,
     },
     jump: {
-      imageSrc: "./public/images/samuraiJack/Jump.png",
+      imageSrc: "images/samuraiJack/Jump.png",
       framesMax: 2,
     },
     fall: {
-      imageSrc: "./public/images/samuraiJack/Fall.png",
+      imageSrc: "images/samuraiJack/Fall.png",
       framesMax: 2,
     },
     attack1: {
-      imageSrc: "./public/images/samuraiJack/Attack1.png",
+      imageSrc: "images/samuraiJack/Attack1.png",
       framesMax: 6,
     },
     takeHit: {
-      imageSrc: "./public/images/samuraiJack/Take Hit - white silhouette.png",
+      imageSrc: "images/samuraiJack/Take Hit - white silhouette.png",
       framesMax: 4,
     },
   },
@@ -86,7 +86,7 @@ const enemy = new Fighter({
     x: -50,
     y: 0,
   },
-  imageSrc: "./public/images/kenji/Idle.png",
+  imageSrc: "images/kenji/Idle.png",
   framesMax: 4,
   scale: 2.5,
   offset: {
@@ -95,27 +95,27 @@ const enemy = new Fighter({
   },
   sprites: {
     idle: {
-      imageSrc: "./public/images/kenji/Idle.png",
+      imageSrc: "images/kenji/Idle.png",
       framesMax: 4,
     },
     run: {
-      imageSrc: "./public/images/kenji/Run.png",
+      imageSrc: "images/kenji/Run.png",
       framesMax: 8,
     },
     jump: {
-      imageSrc: "./public/images/kenji/Jump.png",
+      imageSrc: "images/kenji/Jump.png",
       framesMax: 2,
     },
     fall: {
-      imageSrc: "./public/images/kenji/Fall.png",
+      imageSrc: "images/kenji/Fall.png",
       framesMax: 2,
     },
     attack1: {
-      imageSrc: "./public/images/kenji/Attack1.png",
+      imageSrc: "images/kenji/Attack1.png",
       framesMax: 4,
     },
     takeHit: {
-      imageSrc: "./public/images/kenji/Take hit.png",
+      imageSrc: "images/kenji/Take hit.png",
       framesMax: 3,
     },
   },
