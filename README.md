@@ -8,7 +8,7 @@ The 2D Fighting Game is a two-player fighting game built using vanilla JavaScrip
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Playing the Game](#playing-the-game)
-- [Images](#images)
+
 
 ## Introduction
 
