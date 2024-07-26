@@ -1,7 +1,7 @@
 # 2D Fighting Game
-
+The 2D Fighting Game is a two-player fighting game built using vanilla JavaScript and CSS. It features a simple yet engaging combat system where players can choose their characters and battle each other in a classic 2D arena.
+![Demo Image](public/images/demo.png)
 ## Table of Contents
-- [Introduction](#introduction)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
@@ -11,7 +11,7 @@
 - [Images](#images)
 
 ## Introduction
-The 2D Fighting Game is a two-player fighting game built using vanilla JavaScript and CSS. It features a simple yet engaging combat system where players can choose their characters and battle each other in a classic 2D arena.
+
 
 ## Features
 - **Two-Player Mode**: Play against another player on the same device.
@@ -44,6 +44,5 @@ The 2D Fighting Game is a two-player fighting game built using vanilla JavaScrip
 - **Player 1 Controls**: Use the `W`, `A`, `S`, `D` keys for movement and `J`, `K`, `L` for attacks.
 - **Player 2 Controls**: Use the arrow keys for movement and `Numpad 1`, `Numpad 2`, `Numpad 3` for attacks.
 
-## Images
 
-![Demo Image](public/images/demo.png)
+
