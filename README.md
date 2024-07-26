@@ -9,10 +9,6 @@ The 2D Fighting Game is a two-player fighting game built using vanilla JavaScrip
   - [Installation](#installation)
   - [Playing the Game](#playing-the-game)
 
-
-## Introduction
-
-
 ## Features
 - **Two-Player Mode**: Play against another player on the same device.
 - **Basic Combat Mechanics**: Includes attacks, blocks, and special moves.
