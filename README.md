@@ -37,8 +37,8 @@ The 2D Fighting Game is a two-player fighting game built using vanilla JavaScrip
 3. Open the `index.html` file in your web browser to start the game.
 
 ### Playing the Game
-- **Player 1 Controls**: Use the `W`, `A`, `S`, `D` keys for movement and `J`, `K`, `L` for attacks.
-- **Player 2 Controls**: Use the arrow keys for movement and `Numpad 1`, `Numpad 2`, `Numpad 3` for attacks.
+- **Player 1 Controls**: Use the `W`, `A`, `S`, `D` keys for movement and `Spacebar` for attack.
+- **Player 2 Controls**: Use the arrow keys for movement and arrow down for attack.
 
 
 
