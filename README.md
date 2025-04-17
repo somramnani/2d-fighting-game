@@ -19,7 +19,7 @@ The 2D Fighting Game is a two-player fighting game built using vanilla JavaScrip
 - **Responsive Controls**: Smooth and responsive controls for both players.
 
 ## Technologies Used
-- Vanilla JavaScript
+- JavaScript
 - CSS
 - HTML
 
